@@ -40,3 +40,16 @@ test("Calculator multiply function #1", () => {
 test("Calculator multiply function #2", () => {
   expect(calculator.multiply(9, 3)).toBe(27);
 });
+
+// Caesar Cipher
+test("Caesar Cipher test #1", () => {
+  expect(caesarCipher("xyz", 3)).toEqual("abc");
+});
+
+test("Caesar Cipher test #2: lettercasing preservation", () => {
+  expect(caesarCipher("heLLo", 3)).toEqual("khOOr");
+});
+
+test("Caesar Cipher test #3: punctuation", () => {
+  expect(caesarCipher("Hello, World!", 3)).toEqual("Khoor, Zruog!");
+});
