@@ -13,8 +13,18 @@ const calculator = (function () {
   const add = (x, y) => {
     return x + y;
   };
+  const subtract = (x, y) => {
+    return x - y;
+  };
 
-  return { add };
+  const divide = (x, y) => {
+    return x / y;
+  };
+
+  const multiply = (x, y) => {
+    return x * y;
+  };
+  return { add, subtract, divide, multiply };
 })();
 
 export { capitalize, reverseString, calculator };
