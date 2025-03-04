@@ -9,5 +9,12 @@ function reverseString(string) {
   return array.reverse().join("").toString();
 }
 
-export default capitalize;
-export { reverseString };
+const calculator = (function () {
+  const add = (x, y) => {
+    return x + y;
+  };
+
+  return { add };
+})();
+
+export { capitalize, reverseString, calculator };
