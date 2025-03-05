@@ -27,4 +27,33 @@ const calculator = (function () {
   return { add, subtract, divide, multiply };
 })();
 
-export { capitalize, reverseString, calculator };
+function caesarCipher(string, shift) {
+  let result = [];
+  for (let letter of string) {
+    let ascii = letter.charCodeAt(0);
+    let shiftedLetter = ascii + shift;
+    if (letter === letter.toLowerCase() && ascii >= 97 && ascii <= 122) {
+      if (shiftedLetter > 122) {
+        let difference = shiftedLetter - 122;
+        shiftedLetter = 96 + difference;
+      } else if (shiftedLetter < 97) {
+        let difference = 97 - shiftedLetter;
+        shiftedLetter = 123 - difference;
+      }
+    } else if (letter === letter.toUpperCase() && ascii >= 65 && ascii <= 90) {
+      if (shiftedLetter > 90) {
+        let difference = shiftedLetter - 90;
+        shiftedLetter = 64 + difference;
+      } else if (shiftedLetter < 65) {
+        let difference = 65 - shiftedLetter;
+        shiftedLetter = 91 - difference;
+      }
+    } else {
+      shiftedLetter = ascii;
+    }
+    result.push(String.fromCharCode(shiftedLetter));
+  }
+  return result.join("");
+}
+
+export { capitalize, reverseString, calculator, caesarCipher };

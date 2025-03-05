@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from "./index";
+import { capitalize, reverseString, calculator, caesarCipher } from "./index";
 
 test("Capitalize string elephant", () => {
   expect(capitalize("elephant")).toEqual("Elephant");
@@ -42,7 +42,7 @@ test("Calculator multiply function #2", () => {
 });
 
 // Caesar Cipher
-test("Caesar Cipher test #1", () => {
+test("Caesar Cipher test #1: Jumping to first letters", () => {
   expect(caesarCipher("xyz", 3)).toEqual("abc");
 });
 
